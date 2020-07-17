@@ -69,9 +69,12 @@ class Employee {
 */
 
 class Manager extends Employee {
-  constructor
+  constructor(first_name, last_name, email, age, hire, fire){
+    super(first_name, last_name, email, age);
+    this.hire = hire;
+    this.fire = fire;
+  }
 }
-
 
 ////////// PROBLEM 3 //////////
 
@@ -95,7 +98,7 @@ class Manager extends Employee {
 */
 
 class ProgressiveManager extends Manager {
-
+   
 }
 
 

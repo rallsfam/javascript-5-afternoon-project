@@ -22,13 +22,14 @@ function outer() {
   Invoke outer saving the return value into another variable called 'inner'.
 */
   
-// outer();
+var inner = outer();
+outer()
 
 
 
 //Once you do that, invoke inner.
 
-// inner();
+inner();
 
 
 
@@ -51,6 +52,9 @@ function callFriend(name) {
   (HINT: You will need to pass in arguments to both function invocations)
 */
 
+var callJake = callFriend('Jake');
+callJake('435-555-9248') // 
+
 
 
 
@@ -72,9 +76,6 @@ function makeCounter(){
 const countOne = makeCounter();
 countOne()
 
-
-
-
 //Uncomment this once you make your function
 //   var count = makeCounter();
 //   count(); // 1
@@ -95,13 +96,15 @@ countOne()
   http://stackoverflow.com/questions/17776940/javascript-module-pattern-with-example?answertab=votes#tab-top
 */
 
-function counterFactory(value) {
-  // Code here.
-
-  return {
-
-  };
+function counterFactory(value){
+  let result = 10;
+  return function(inc){
+    return ++result;
+    
+  }
 }
+
+
 
 counter = counterFactory(10);
 // counter.inc() // 11
